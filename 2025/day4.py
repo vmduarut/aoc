@@ -46,15 +46,11 @@ def part2():
     print(f"Grid: {grid}")
     result = 0
     while True:
-        #     miss_rollpaper = True
         to_remove = []
         for row, line in enumerate(grid):
             for col, pos in enumerate(line):
                 if pos == "@" and check_rollpaper(grid, row, col):
                     to_remove.append((row, col))
-                    # miss_rollpaper = False
-                    # result += 1
-                    # grid[row][col] = "."
         if not to_remove:
             break
         for row, col in to_remove:
